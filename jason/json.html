@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json Parse - Cars</title>
+</head>
+<body>
+    <script>
+       var json_data = `[
+        {
+          "car":"BMW",
+          "feature":"Luxury and Performance",
+          "price":7500000,
+          "year":2022,
+          "image":"https://images.unsplash.com/photo-1555215695-3004980ad54c"
+        },
+        {
+          "car":"Tesla",
+          "feature":"Electric and Smart Technology",
+          "price":6000000,
+          "year":2023,
+          "image":"https://images.unsplash.com/photo-1511396275276-5e28f9f14e46"
+        },
+        {
+          "car":"Audi",
+          "feature":"Premium Design",
+          "price":7000000,
+          "year":2021,
+          "image":"https://images.unsplash.com/photo-1502877338535-766e1452684a"
+        }
+       ]`;
+ 
+       var js_obj = JSON.parse(json_data);
+       for(var i=0; i<js_obj.length; i++){
+            document.write("<h2>" + js_obj[i].car + "</h2>");
+            document.write("<img src='" + js_obj[i].image + "' width='300'><br>");
+            document.write("Feature : " + js_obj[i].feature + "<br>");
+            document.write("Price : ₹" + js_obj[i].price + "<br>");
+            document.write("Year : " + js_obj[i].year + "<br>");
+            document.write("<hr>");
+       }
+    </script>
+</body>
+</html>

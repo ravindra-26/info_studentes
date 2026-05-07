@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    let apiData =[
+    {id:1,name:"ravindra", salary:20000,company:"vnsoft"},
+    {id:2,name:"ram", salary:29000,company:"vnsoft"},
+    {id:3,name:"raja", salary:28000,company:"vnsoft"},
+    {id:4,name:"ragav", salary:20000,company:"vnsoft"},
+    {id:5,name:"ramcharan", salary:29000,company:"vnsoft"},
+    {id:6,name:"raju", salary:23000,company:"vnsoft"},
+    {id:7,name:"rama", salary:27000,company:"vnsoft"},
+    {id:8,name:"ragu", salary:25000,company:"vnsoft"}
+    ];
+
+    let mydata =apiData.map(user =>({
+        id:user.id,
+        name:user.name.toUpperCase(),
+        status: user.salary >=25000 ? "sr": "jr"
+
+    }));
+
+    console.log(mydata)
+
+    // let upiData= apiData.filter(user => user.salary<= 25000);//
+        
+   // console.log(upiData) //
+   </script> 
+</body>
+</html>

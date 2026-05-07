@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+        const apiData = [
+  { id: 1, name: "ravi", score: 80 },
+  { id: 2, name: "gopal", score: 45 }
+];
+
+const uiData = apiData.map(user => ({
+  id: user.id,
+  name: user.name.toUpperCase(),
+  status: user.score >= 50 ? "Pass" : "Fail"
+}));
+
+console.log(uiData);
+
+    </script>
+</body>
+</html>

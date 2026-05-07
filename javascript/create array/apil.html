@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d{
+            height: 100%;
+            border: 2px solid red;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            margin-top: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <button>jewelary</button>
+    <button>men's cloth</button>
+    <button>women cloth</button>
+    <button>electronics</button>
+    <div id="main" class="d"></div>
+    <script>
+        fetch('https://fakestoreapi.com/products/')
+            .then(res=>res.json())            
+            .then(data=>{
+                let html="";
+                data.map(ele=>( 
+                    html+=`
+                    <div ><h1>${ele.id}</h1>
+                    <img width="100px"height="100px" src="${ele.image}"/>
+                    <p>${ele.title}</p>
+                    <p>${ele.price}</p>
+                    <p>${ele.rating.rate}</p>
+                    <p>${ele.rating.count}</p>
+
+                    </div>`
+
+                    
+                ))
+                document.getElementById("main").innerHTML=html
+            })
+
+    </script>
+</body>
+</html>

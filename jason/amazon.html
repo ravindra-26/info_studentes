@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon UI Clone</title>
+</head>
+<body>
+
+    <header>
+        <h1>BugBuster creates</h1>
+    </header>
+
+    <div class="container" id="productContainer">
+        <!-- Products will load here -->
+    </div>
+
+    <script>
+// JSON Data
+const products = [
+    {
+        id: 1,
+        title: "CAR",
+        price: 1499,
+        rating: 4,
+        image: "car.jpeg"
+    },
+    {
+        id: 2,
+        title: "Smart Watch",
+        price: 2999,
+        rating: 5,
+        image: "https://via.placeholder.com/200"
+    },
+    {
+        id: 3,
+        title: "Laptop Bag",
+        price: 799,
+        rating: 3,
+        image: "https://via.placeholder.com/200"
+    },
+    {
+        id: 4,
+        title: "Bluetooth Speaker",
+        price: 1199,
+        rating: 4,
+        image: "https://via.placeholder.com/200"
+    }
+];
+
+// Load Products
+const container = document.getElementById("productContainer");
+
+products.forEach(product => {
+
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML = `
+        <img src="${product.image}">
+        <div class="title">${product.title}</div>
+        <div class="rating">${"⭐".repeat(product.rating)}</div>
+        <div class="price">₹ ${product.price}</div>
+        <button onclick="addToCart('${product.title}')">Add to Cart</button>
+    `;
+
+    container.appendChild(card);
+});
+
+// Add to Cart Function
+function addToCart(title){
+    alert(title + " added to cart!");
+}
+</script>
+
+</body>
+
+</html>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(238, 14, 14);
+    margin: 0;
+}
+
+header {
+    background-color: #131921;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: rgb(238, 14, 14);
+    padding: 15px;
+    border-radius: 5px;
+    border-color: rgb(245, 243, 243);
+    transition: 0.3s;
+   
+}
+.card:hover{
+box-shadow: 0 0 5px rgb(248, 219, 3);
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.title {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #eaeded;
+    font-weight: bolder;
+}
+
+.price {
+    color: #B12704;
+    font-weight: bold;
+}
+
+.rating {
+    color: #FFA41C;
+}
+
+button {
+    background: #FFD814;
+    border: none;
+    padding: 8px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+button:hover {
+    background: #F7CA00;
+}
+.price{
+    color: #eaeded;
+}
+</style>

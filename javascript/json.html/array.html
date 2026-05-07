@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Table Example</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Student Table</h2>
+
+<table id="studentTable">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+    </tr>
+</table>
+
+<script>
+    // JSON Array
+    const students = [
+        {name: "Ravi", age: 22, city: "Hyderabad"},
+        {name: "Kiran", age: 24, city: "Chennai"},
+        {name: "Anil", age: 23, city: "Bangalore"}
+    ];
+
+    let table = document.getElementById("studentTable");
+
+    students.forEach(function(student) {
+        let row = table.insertRow();
+
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        let cell3 = row.insertCell(2);
+
+        cell1.innerHTML = student.name;
+        cell2.innerHTML = student.age;
+        cell3.innerHTML = student.city;
+    });
+</script>
+
+</body>
+</html>
